@@ -1,7 +1,6 @@
 {
-  "name": "angular-webpack-workflow",
+  "name": "angular-testapp",
   "version": "1.0.0",
-  "description": "A workflow for Angular made with Webpack",
   "scripts": {
     "build": "rimraf dist && webpack --bail --progress --profile",
     "server": "webpack-dev-server --history-api-fallback --inline --progress",
@@ -9,22 +8,10 @@
     "test-watch": "karma start --auto-watch --no-single-run",
     "start": "npm run server"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Foxandxss/angular-webpack-workflow.git"
-  },
-  "author": "Jesus Rodriguez",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Foxandxss/angular-webpack-workflow/issues"
-  },
-  "homepage": "https://github.com/Foxandxss/angular-webpack-workflow",
-  "dependencies": {
-    "angular": "^1.5.0",
-    "angular-moment": "^1.0.0",
-    "moment": "^2.15.2"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "angular": "^1.5.0",
+    "normalize.css": "^5.0.0",
     "angular-mocks": "^1.5.0",
     "autoprefixer": "^6.0.3",
     "babel-core": "^6.2.1",
@@ -44,6 +31,7 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-spec-reporter": "0.0.26",
     "karma-webpack": "^1.7.0",
+    "moment": "^2.15.2",
     "node-libs-browser": "^1.0.0",
     "null-loader": "^0.1.1",
     "phantomjs-prebuilt": "^2.1.4",

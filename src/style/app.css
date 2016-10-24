@@ -1,22 +1,119 @@
 /* styles in src/style directory are applied to the whole page */
 body {
-  background: #0147A7;
-  color: #fff;
-}
-
-a {
-  color: #03A9F4;
-}
-
-main {
-  padding: 1em;
   font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
-  margin-top: 50px;
-  display: block;
 }
 
-footer {
+.days {
+  display: flex;
+  flex-direction: row;
+}
+
+.hour{
+  border-top: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+  padding-top: 20px;
   text-align: center;
-  font-size: 0.8em;
+}
+
+.container-grid{
+  display: flex;
+  flex-direction: row;
+}
+
+.column-hour{
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 50px;
+}
+
+.container-cells{
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 100%;
+}
+
+.hour-cell,
+.hour {
+  height: 60px;
+  box-sizing: border-box;
+}
+
+.hour-cell{
+  border-top: 1px solid #DDDDDD;
+}
+
+.container {
+  padding: 40px 0 45px;
+  position: relative;
+}
+
+.container-events{
+  position: absolute;
+  top: 40px;
+  left: 50px;
+  right: 0;
+  bottom: 45px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.date{
+  border-right: 1px solid #eeeeee;
+  position: relative;
+}
+
+.day,
+.date{
+  display: flex;
+  flex: 1 1 100%;
+  flex-direction: column;
+}
+
+.day p {
+  text-align: center;
+}
+
+.header{
+  position: fixed;
+  background: navajowhite;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 40px;
+}
+
+p{
+  padding: 0;
+  margin: 0;
+}
+
+.event{
+  position: absolute;
+  background: rgba(0,255,0,0.3);
+  border: 1px solid green;
+  box-sizing: border-box;
+  left:0;
+  max-width: 100%;
+}
+
+footer{
+  position: fixed;
+  z-index: 1000;
+  bottom: 0;
+  background: navajowhite;
+  left: 0;
+  right:0;
+  padding:10px;
+  height: 25px;
+}
+
+footer a {
+  cursor: pointer;
+  padding: 5px;
+  background: rgba(200, 200, 200, 0.5);
+  border: 1px solid #000000;
+  border-radius: 3px;
 }

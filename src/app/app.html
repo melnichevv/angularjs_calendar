@@ -1,9 +1,57 @@
-<main>
-  <h1 class="title">Hello from Angular !</h1>
-
-  <!-- Images (and assets) are parsed and loaded from within the public directory -->
-  <img src="/img/logo.png">
-</main>
+<div>
+  <div class="header">
+    <div class="days">
+      <div class="column-hour"></div>
+      <div class="day" ng-repeat="day in app.days">
+        <p>{{day|moment:'ddd'}}</p>
+        <p>{{day|moment:'DD-MMM'}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="container" data-ng-if="!app.loading">
+    <div class="container-grid">
+      <div class="column-hour">
+        <div class="hour" ng-repeat="item in app.getHours()">
+          {{item|moment:'ha':'H'}}
+        </div>
+      </div>
+      <div class="container-cells">
+        <div class="hour-cell" ng-repeat="item in app.getHours()"></div>
+      </div>
+    </div>
+    <div class="container-events">
+      <div class="date" ng-repeat="day in app.days">
+        <div class="event"
+             data-ng-repeat="event in app.getEventsForDay(day)"
+             data-ng-style="app.getStyleForEvent(event)">
+          <p class="title">{{event.name}}</p>
+          <p class="time">
+            {{event.startDate|moment:'h:mma'}} -
+            {{event.endDate|moment:'h:mma'}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="loading" data-ng-if="app.loading">
+    loading
+  </div>
+</div>
 <footer>
-  <a ng-href="{{app.url}}">Webpack Angular Starter</a>
+  <a class="button" data-ng-click="app.changeMode(1)">1 day mode</a>
+  |
+  <a class="button" data-ng-click="app.changeMode(4)">4 day mode</a>
+  |
+  <a class="button" data-ng-click="app.changeMode(7)">Week mode</a>
+
+  ||
+
+  <a class="button" data-ng-click="app.addToStartDate(-1, 'day')"><~</a>
+  <a class="button" data-ng-click="app.addToStartDate(1, 'day')">~></a>
+
+  ||
+
+  <a class="button" data-ng-click="app.addToStartDate(-app.mode, 'day')"><<<=</a>
+  <a class="button" data-ng-click="app.addToStartDate(app.mode, 'day')">=>>></a>
+
 </footer>
